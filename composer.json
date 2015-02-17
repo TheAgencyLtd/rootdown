@@ -1,0 +1,11 @@
+{
+    "require": {
+        "slim/slim": "2.*",
+        "michelf/php-markdown": "~1.4",
+        "mnapoli/front-yaml": "~1.4",
+        "filicious/core": "0.9.*"
+    },
+    "autoload": {
+      "psr-4": {"Rootdown\\": "Rootdown/"}
+    }
+}
