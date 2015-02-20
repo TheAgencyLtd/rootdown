@@ -40,6 +40,10 @@ class Page {
   public function pagelist($root){
     return $this->rd->pagelist($root);
   }
+  public function data(){
+    return $this->data;
+  }
+
 }
 
 class Rootdown {
@@ -119,7 +123,7 @@ class Rootdown {
 
   }
 
-  public function render($file = null, $template = 'default.php'){
+  public function render($file = null, $template = 'default.php', $data = null){
 
     if($file){
       $page = new Page;
@@ -127,6 +131,10 @@ class Rootdown {
     } else {
       $page = $this->find($this->site()->children, $this->URL());
       $template = $page->doc['frontmatter']["template"];
+    }
+
+    if($data){
+      $page->data = $data;
     }
 
     $page->rd = $this;

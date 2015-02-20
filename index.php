@@ -13,6 +13,12 @@ $app->get('/', function () use ($rd) {
   $rd->render('/index.md', 'home.php');
 });
 
+$app->get('/app', function() use ($rd){
+  $rd->render('/app.md', 'app.php', array(
+    "data" => "data"
+  ));
+});
+
 $app->get('/:pages+', function($pages) use ($rd){
   $rd->render();
 });
