@@ -682,11 +682,10 @@ html {
 
 /* line 123, ../scss/_skeleton.scss */
 body {
-  font-size: 1.5em;
+  font-size: 1.6em;
   /* currently ems cause chrome bug misinterpreting rems on body element */
-  line-height: 1.6;
-  font-weight: 400;
-  font-family: "Raleway", "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  line-height: 1.75;
+  font-family: sans-serif;
   color: #222;
 }
 
@@ -696,7 +695,7 @@ body {
 h1, h2, h3, h4, h5, h6 {
   margin-top: 0;
   margin-bottom: 2rem;
-  font-weight: 300;
+  font-weight: bold;
 }
 
 /* line 137, ../scss/_skeleton.scss */
@@ -1107,13 +1106,6 @@ there.
 /* Larger than tablet */
 /* Larger than desktop */
 /* Larger than Desktop HD */
-/* line 2, ../scss/_home.scss */
-.home .hero {
-  background: url(http://www.usedtothespin.com/wp-content/uploads/2012/01/NYC.jpg) no-repeat center;
-  background-size: cover;
-  height: 400px;
-}
-
 /* line 2, ../scss/_navigation.scss */
 nav * {
   list-style-type: none;
@@ -1201,12 +1193,12 @@ nav * {
   text-decoration: none;
 }
 
-/* line 10, ../scss/styles.scss */
+/* line 9, ../scss/styles.scss */
 a:hover {
   text-decoration: none;
 }
 
-/* line 15, ../scss/styles.scss */
+/* line 14, ../scss/styles.scss */
 [role=main] {
   margin-top: 40px;
 }

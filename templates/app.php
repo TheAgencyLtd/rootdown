@@ -16,7 +16,7 @@
           </ul>
         </nav>
         <?=$page->content()?>
-        <?php var_dump($page->data()); ?>
+        <pre><?php var_dump($page->data()); ?></pre>
       </article>
       <aside class="four columns">
         <nav class="channel">

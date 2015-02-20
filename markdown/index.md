@@ -4,4 +4,6 @@ description: "This is the description"
 template: "home.php"
 ---
 
-## Welcome
+## Rootdown
+
+Simple, lightweight, developer centric content management

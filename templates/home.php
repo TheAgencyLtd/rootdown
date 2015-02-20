@@ -6,8 +6,6 @@
 
     <?php include "partials/header.php"; ?>
 
-    <section class="hero"></section>
-
     <section class="container" role="main">
       <article class="twelve columns">
         <?=$page->content()?>
@@ -19,9 +17,9 @@
         <ul>
           <?php foreach($page->pagelist('/docs') as $page) : ?>
             <li>
-              <h2><?=$page->title()?></h2>
+              <h3><?=$page->title()?></h3>
               <p><?=$page->description()?></p>
-              <a href="<?=$page->path()?>">Read more ...</a>
+              <p><a href="<?=$page->path()?>">Read more ...</a></p>
             </li>
           <?php endforeach; ?>
         </ul>
