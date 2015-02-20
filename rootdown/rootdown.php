@@ -37,6 +37,9 @@ class Page {
   public function breadcrumb(){
     $this->rd->breadcrumb();
   }
+  public function pagelist($root){
+    return $this->rd->pagelist($root);
+  }
 }
 
 class Rootdown {
@@ -161,6 +164,10 @@ class Rootdown {
 
   function mainmenu(){
     $this->navigation($this->site()->children);
+  }
+
+  function pagelist($root){
+    return $this->find($this->site()->children, $root)->children;
   }
 
 }

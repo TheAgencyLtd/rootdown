@@ -14,6 +14,20 @@
       </article>
     </section>
 
+    <section class="container" role="main">
+      <nav>
+        <ul>
+          <?php foreach($page->pagelist('/docs') as $page) : ?>
+            <li>
+              <h2><?=$page->title()?></h2>
+              <p><?=$page->description()?></p>
+              <a href="<?=$page->path()?>">Read more ...</a>
+            </li>
+          <?php endforeach; ?>
+        </ul>
+      </nav>
+    </div>
+
     <?php include "partials/footer.php"; ?>
 
   </body>
