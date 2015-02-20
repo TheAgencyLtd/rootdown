@@ -1111,60 +1111,83 @@ nav * {
   list-style-type: none;
 }
 
-/* line 7, ../scss/_navigation.scss */
+/* line 8, ../scss/_navigation.scss */
+.channel li {
+  margin-bottom: 3px;
+}
+/* line 10, ../scss/_navigation.scss */
+.channel li a {
+  display: block;
+  border: solid 1px #eee;
+  background: #f5f5f5;
+  padding: 6px 12px;
+}
+/* line 15, ../scss/_navigation.scss */
+.channel li a.in-path, .channel li a.selected {
+  background: #eee;
+  border: solid 1px #ccc;
+}
+
+/* line 24, ../scss/_navigation.scss */
 .mainmenu {
   position: absolute;
   top: 0px;
   right: 0px;
 }
-/* line 11, ../scss/_navigation.scss */
+/* line 28, ../scss/_navigation.scss */
 .mainmenu * {
   font-size: 1em;
   line-height: 60px;
 }
-/* line 15, ../scss/_navigation.scss */
+/* line 32, ../scss/_navigation.scss */
 .mainmenu ul {
   margin: 0px;
   padding: 0px;
   float: right;
 }
-/* line 19, ../scss/_navigation.scss */
+/* line 36, ../scss/_navigation.scss */
 .mainmenu ul li {
   float: left;
 }
-/* line 21, ../scss/_navigation.scss */
+/* line 38, ../scss/_navigation.scss */
 .mainmenu ul li a {
   display: inline-block;
   padding: 0px 18px;
 }
-/* line 27, ../scss/_navigation.scss */
-.mainmenu ul li ul li ul {
+/* line 41, ../scss/_navigation.scss */
+.mainmenu ul li a.in-path, .mainmenu ul li a.selected {
+  background: #fff;
+  color: #666;
+  text-decoration: none;
+}
+/* line 48, ../scss/_navigation.scss */
+.mainmenu ul li ul {
   display: none;
 }
 
-/* line 36, ../scss/_navigation.scss */
+/* line 55, ../scss/_navigation.scss */
 .breadcrumb {
   margin-bottom: 20px;
 }
-/* line 38, ../scss/_navigation.scss */
+/* line 57, ../scss/_navigation.scss */
 .breadcrumb * {
   font-size: 1em;
 }
-/* line 41, ../scss/_navigation.scss */
+/* line 60, ../scss/_navigation.scss */
 .breadcrumb ul {
   display: inline;
   margin: 0px;
 }
-/* line 44, ../scss/_navigation.scss */
+/* line 63, ../scss/_navigation.scss */
 .breadcrumb ul li {
   display: inline;
 }
-/* line 48, ../scss/_navigation.scss */
+/* line 67, ../scss/_navigation.scss */
 .breadcrumb ul li ul li:before {
   content: ' / ';
   color: #ccc;
 }
-/* line 53, ../scss/_navigation.scss */
+/* line 72, ../scss/_navigation.scss */
 .breadcrumb ul li ul li:last-child a {
   text-decoration: none;
   color: #ccc;

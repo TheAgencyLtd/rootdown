@@ -147,9 +147,26 @@ class Rootdown {
 
   public function navigation($pages, $recursive = true){ ?>
     <ul>
-      <?php foreach($pages as $page) : ?>
+      <?php foreach($pages as $page) :
+
+        $class = '';
+        $classes = array();
+
+        if(strpos($this->URL(), $page->path()) !== false){
+          $classes[] = "in-path";
+        }
+
+        if($page->path()==$this->URL()){
+          $classes[] = "selected";
+        }
+
+        if(count($classes) > 0){
+          $class = ' class="'.implode(' ', $classes).'"';
+        }
+
+        ?>
         <li>
-          <a href="<?=$page->path()?>"<?=($page->path()==$this->URL())? ' class="selected"' : ''; ?>><?=$page->title()?></a>
+          <a href="<?=$page->path()?>"<?=$class?>><?=$page->title()?></a>
           <?php if($recursive) if(!empty($page->children)) $this->navigation($page->children); ?>
         </li>
       <?php endforeach; ?>

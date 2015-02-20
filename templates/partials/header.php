@@ -3,11 +3,7 @@
     <header class="twelve columns">
       <h1><a href="/">ROOTDOWN</a></h1>
       <nav class="mainmenu">
-        <ul>
-          <li><a href="/">Home</a>
-            <?php $page->mainmenu(); ?>
-          </li>
-        </ul>
+        <?php $page->mainmenu(); ?>
       </nav>
     </header>
   </div>
