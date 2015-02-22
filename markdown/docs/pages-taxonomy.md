@@ -1,7 +1,7 @@
 ---
-title: "Usage"
+title: "Pages and Taxonomy"
 description: "This is the description"
 template: "aside.php"
 ---
 
-## Usage
+## Pages & Taxonomy

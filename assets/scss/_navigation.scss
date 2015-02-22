@@ -9,13 +9,13 @@ nav{
     margin-bottom: 3px;
     a{
       display: block;
-      border: solid 1px #eee;
       background: #f5f5f5;
       padding: 6px 12px;
       &.in-path,
       &.selected{
         background: #eee;
-        border: solid 1px #ccc;
+        color: #666;
+        text-decoration: none;
       }
     }
   }

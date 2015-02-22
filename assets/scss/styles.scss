@@ -3,7 +3,58 @@
 @import "normalize";
 @import "skeleton";
 @import "navigation";
-@import "header";
+
+
+html{
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+
+  -webkit-text-rendering: optimizeLegibility;
+  -moz-text-rendering: optimizeLegibility;
+  -ms-text-rendering: optimizeLegibility;
+  -o-text-rendering: optimizeLegibility;
+  text-rendering: optimizeLegibility;
+
+  -webkit-font-smoothing: antialiased;
+  -moz-font-smoothing: antialiased;
+  -ms-font-smoothing: antialiased;
+  -o-font-smoothing: antialiased;
+  font-smoothing: antialiased;
+}
+
+.band{
+  margin: 0px;
+  height: 180px;
+  background: url(../images/spring-tree-blossoms-flower-hd-wallpaper-1920x1200-8909.jpg) no-repeat center;
+  background-size: cover;
+}
+
+.footer,
+.header{
+  background: #222;
+  color: #fff;
+  a{
+    color: #fff;
+  }
+}
+
+.header{
+  *{
+    line-height: 60px;
+  }
+  h1{
+    margin: 0px;
+    font-size: 1.4em;
+    font-weight: bold;
+    a{
+      text-decoration: none;
+    }
+  }
+}
+
+.footer{
+  padding-top: 20px;
+}
 
 a{
   &:hover{
@@ -13,4 +64,8 @@ a{
 
 [role=main]{
   margin-top: 40px;
+}
+
+.gist{
+  margin-bottom: 40px;
 }

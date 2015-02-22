@@ -971,14 +971,9 @@ ol ul {
   font-size: 90%;
 }
 
-/* line 303, ../scss/_skeleton.scss */
-li {
-  margin-bottom: 1rem;
-}
-
 /* Code
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
-/* line 309, ../scss/_skeleton.scss */
+/* line 307, ../scss/_skeleton.scss */
 code {
   padding: .2rem .5rem;
   margin: 0 .2rem;
@@ -989,7 +984,7 @@ code {
   border-radius: 4px;
 }
 
-/* line 317, ../scss/_skeleton.scss */
+/* line 315, ../scss/_skeleton.scss */
 pre > code {
   display: block;
   padding: 1rem 1.5rem;
@@ -998,7 +993,7 @@ pre > code {
 
 /* Tables
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
-/* line 325, ../scss/_skeleton.scss */
+/* line 323, ../scss/_skeleton.scss */
 th,
 td {
   padding: 12px 15px;
@@ -1006,13 +1001,13 @@ td {
   border-bottom: 1px solid #E1E1E1;
 }
 
-/* line 330, ../scss/_skeleton.scss */
+/* line 328, ../scss/_skeleton.scss */
 th:first-child,
 td:first-child {
   padding-left: 0;
 }
 
-/* line 333, ../scss/_skeleton.scss */
+/* line 331, ../scss/_skeleton.scss */
 th:last-child,
 td:last-child {
   padding-right: 0;
@@ -1020,13 +1015,13 @@ td:last-child {
 
 /* Spacing
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
-/* line 340, ../scss/_skeleton.scss */
+/* line 338, ../scss/_skeleton.scss */
 button,
 .button {
   margin-bottom: 1rem;
 }
 
-/* line 343, ../scss/_skeleton.scss */
+/* line 341, ../scss/_skeleton.scss */
 input,
 textarea,
 select,
@@ -1034,7 +1029,7 @@ fieldset {
   margin-bottom: 1.5rem;
 }
 
-/* line 348, ../scss/_skeleton.scss */
+/* line 346, ../scss/_skeleton.scss */
 pre,
 blockquote,
 dl,
@@ -1049,31 +1044,31 @@ form {
 
 /* Utilities
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
-/* line 362, ../scss/_skeleton.scss */
+/* line 360, ../scss/_skeleton.scss */
 .u-full-width {
   width: 100%;
   box-sizing: border-box;
 }
 
-/* line 365, ../scss/_skeleton.scss */
+/* line 363, ../scss/_skeleton.scss */
 .u-max-full-width {
   max-width: 100%;
   box-sizing: border-box;
 }
 
-/* line 368, ../scss/_skeleton.scss */
+/* line 366, ../scss/_skeleton.scss */
 .u-pull-right {
   float: right;
 }
 
-/* line 370, ../scss/_skeleton.scss */
+/* line 368, ../scss/_skeleton.scss */
 .u-pull-left {
   float: left;
 }
 
 /* Misc
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
-/* line 376, ../scss/_skeleton.scss */
+/* line 374, ../scss/_skeleton.scss */
 hr {
   margin-top: 3rem;
   margin-bottom: 3.5rem;
@@ -1084,7 +1079,7 @@ hr {
 /* Clearing
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
 /* Self Clearing Goodness */
-/* line 387, ../scss/_skeleton.scss */
+/* line 385, ../scss/_skeleton.scss */
 .container:after,
 .row:after,
 .u-cf {
@@ -1118,14 +1113,14 @@ nav * {
 /* line 10, ../scss/_navigation.scss */
 .channel li a {
   display: block;
-  border: solid 1px #eee;
   background: #f5f5f5;
   padding: 6px 12px;
 }
-/* line 15, ../scss/_navigation.scss */
+/* line 14, ../scss/_navigation.scss */
 .channel li a.in-path, .channel li a.selected {
   background: #eee;
-  border: solid 1px #ccc;
+  color: #666;
+  text-decoration: none;
 }
 
 /* line 24, ../scss/_navigation.scss */
@@ -1193,35 +1188,73 @@ nav * {
   color: #ccc;
 }
 
-/* line 1, ../scss/_header.scss */
+/* line 8, ../scss/styles.scss */
+html {
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+  -webkit-text-rendering: optimizeLegibility;
+  -moz-text-rendering: optimizeLegibility;
+  -ms-text-rendering: optimizeLegibility;
+  -o-text-rendering: optimizeLegibility;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-font-smoothing: antialiased;
+  -ms-font-smoothing: antialiased;
+  -o-font-smoothing: antialiased;
+  font-smoothing: antialiased;
+}
+
+/* line 25, ../scss/styles.scss */
+.band {
+  margin: 0px;
+  height: 180px;
+  background: url(../images/spring-tree-blossoms-flower-hd-wallpaper-1920x1200-8909.jpg) no-repeat center;
+  background-size: cover;
+}
+
+/* line 32, ../scss/styles.scss */
+.footer,
 .header {
   background: #222;
+  color: #fff;
 }
-/* line 2, ../scss/_header.scss */
-.header * {
-  line-height: 60px;
-}
-/* line 6, ../scss/_header.scss */
+/* line 36, ../scss/styles.scss */
+.footer a,
 .header a {
   color: #fff;
 }
-/* line 9, ../scss/_header.scss */
+
+/* line 42, ../scss/styles.scss */
+.header * {
+  line-height: 60px;
+}
+/* line 45, ../scss/styles.scss */
 .header h1 {
   margin: 0px;
   font-size: 1.4em;
   font-weight: bold;
 }
-/* line 13, ../scss/_header.scss */
+/* line 49, ../scss/styles.scss */
 .header h1 a {
   text-decoration: none;
 }
 
-/* line 9, ../scss/styles.scss */
+/* line 55, ../scss/styles.scss */
+.footer {
+  padding-top: 20px;
+}
+
+/* line 60, ../scss/styles.scss */
 a:hover {
   text-decoration: none;
 }
 
-/* line 14, ../scss/styles.scss */
+/* line 65, ../scss/styles.scss */
 [role=main] {
   margin-top: 40px;
+}
+
+/* line 69, ../scss/styles.scss */
+.gist {
+  margin-bottom: 40px;
 }

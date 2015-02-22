@@ -10,14 +10,14 @@ $rd   = new Rootdown;
 $app  = new Slim;
 
 $app->get('/', function () use ($rd) {
-  $rd->render('/index.md', 'home.php');
+  $rd->render('/index.md', 'full.php');
 });
 
-$app->get('/app', function() use ($rd){
-  $rd->render('/app.md', 'app.php', array(
-    "data" => "data"
-  ));
-});
+// $app->get('/app', function() use ($rd){
+//   $rd->render('/app.md', 'app.php', array(
+//     "data" => "data"
+//   ));
+// });
 
 $app->get('/:pages+', function($pages) use ($rd){
   $rd->render();

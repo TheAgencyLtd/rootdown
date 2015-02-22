@@ -1,7 +1,7 @@
 ---
 title: "Installation"
 description: "This is the description"
-template: "default.php"
+template: "aside.php"
 ---
 
 ## Installation

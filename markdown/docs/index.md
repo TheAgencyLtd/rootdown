@@ -1,7 +1,9 @@
 ---
-title: "Documentation"
+title: "User Guide"
 description: "This is the description"
-template: "default.php"
+template: "aside.php"
+omitFromNav: "false"
+omitChildrenFromNav: "false"
 ---
 
 ## Documentation

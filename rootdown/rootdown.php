@@ -8,6 +8,13 @@ use \Filicious\Local\LocalAdapter;
 use \Filicious\Filesystem;
 use \Mni\FrontYAML;
 
+
+class Site{
+  public static function meth(){
+
+  }
+}
+
 class Page {
   public $children = array();
   public function content(){

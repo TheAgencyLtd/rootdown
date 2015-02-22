@@ -1,3 +1,5 @@
+<figure class="band">
+</figure>
 <section class="header">
   <div class="container">
     <header class="twelve columns">
