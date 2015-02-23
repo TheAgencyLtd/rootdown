@@ -70,23 +70,15 @@ class Site{
   public static $markdownPath;
 
   private static function parse($files, &$parent){
-
     foreach ($files as $file) {
-
       if($file->getBasename() != "index.md"){
-
         $page = self::mint(rtrim($file->getPathname()) . ($file->isDirectory() ? '/index.md' : ''));
-
         $parent->children[] = $page;
-
         if($file->isDirectory()){
           self::parse($file, $page);
         }
-
       }
-
     }
-
   }
 
 
@@ -114,13 +106,9 @@ class Site{
   }
 
   public static function map($markdownPath = '/markdown/'){
-
     self::setMarkdownPath($markdownPath);
-
     if(!self::$tree){
-
       $rootFile = '/index.md';
-
       if(file_exists(self::getMarkdownFile($rootFile))){
 
         $fs = new Filesystem(new LocalAdapter(self::$markdownPath));
@@ -132,17 +120,11 @@ class Site{
         return $root;
 
       } else {
-
         echo "Missing index.md file in /$markdownPath";
-
       }
-
     } else {
-
       return self::$tree;
-
     }
-
   }
 
   private static function mint($file) {

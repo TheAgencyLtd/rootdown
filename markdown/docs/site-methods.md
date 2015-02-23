@@ -1,8 +1,8 @@
 ---
-title: "Usage"
+title: "Site Object"
 description: "This is the description"
 template: "aside.php"
-order: 3
+order: 5
 ---
 
-## Usage
+## Pages & Taxonomy

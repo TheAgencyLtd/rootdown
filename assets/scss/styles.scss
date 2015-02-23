@@ -6,6 +6,8 @@
 
 
 html{
+  background: #222;
+
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
 
@@ -31,7 +33,6 @@ html{
 
 .footer,
 .header{
-  background: #222;
   color: #fff;
   a{
     color: #fff;
@@ -63,7 +64,9 @@ a{
 }
 
 [role=main]{
-  margin-top: 40px;
+  padding-top: 40px;
+  min-height: 440px;
+  background: #fff;
 }
 
 .gist{

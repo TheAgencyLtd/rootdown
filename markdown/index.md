@@ -12,7 +12,7 @@ Rootdown is built to augment the [Slim](http://www.slimframework.com/) Micro fra
 **Features**
 
 - Simple to use.
-- Easy to integrate into Slim applications.
+- Easy to integrate into Slim applications or any other framework.
 - Capable of deep and complex taxonomies.
 - Flexible [YAML](http://yaml.org/) / [Markdown](http://en.wikipedia.org/wiki/Markdown_Extra) approach.
 - Fast file systems storage, no database required.

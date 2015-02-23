@@ -1118,71 +1118,70 @@ nav * {
 }
 /* line 14, ../scss/_navigation.scss */
 .channel li a.in-path, .channel li a.selected {
-  background: #eee;
   color: #666;
   text-decoration: none;
 }
 
-/* line 24, ../scss/_navigation.scss */
+/* line 23, ../scss/_navigation.scss */
 .mainmenu {
   position: absolute;
   top: 0px;
   right: 0px;
 }
-/* line 28, ../scss/_navigation.scss */
+/* line 27, ../scss/_navigation.scss */
 .mainmenu * {
   font-size: 1em;
   line-height: 60px;
 }
-/* line 32, ../scss/_navigation.scss */
+/* line 31, ../scss/_navigation.scss */
 .mainmenu ul {
   margin: 0px;
   padding: 0px;
   float: right;
 }
-/* line 36, ../scss/_navigation.scss */
+/* line 35, ../scss/_navigation.scss */
 .mainmenu ul li {
   float: left;
 }
-/* line 38, ../scss/_navigation.scss */
+/* line 37, ../scss/_navigation.scss */
 .mainmenu ul li a {
   display: inline-block;
   padding: 0px 18px;
 }
-/* line 41, ../scss/_navigation.scss */
+/* line 40, ../scss/_navigation.scss */
 .mainmenu ul li a.in-path, .mainmenu ul li a.selected {
   background: #fff;
   color: #666;
   text-decoration: none;
 }
-/* line 48, ../scss/_navigation.scss */
+/* line 47, ../scss/_navigation.scss */
 .mainmenu ul li ul {
   display: none;
 }
 
-/* line 55, ../scss/_navigation.scss */
+/* line 54, ../scss/_navigation.scss */
 .breadcrumb {
   margin-bottom: 20px;
 }
-/* line 57, ../scss/_navigation.scss */
+/* line 56, ../scss/_navigation.scss */
 .breadcrumb * {
   font-size: 1em;
 }
-/* line 60, ../scss/_navigation.scss */
+/* line 59, ../scss/_navigation.scss */
 .breadcrumb ul {
   display: inline;
   margin: 0px;
 }
-/* line 63, ../scss/_navigation.scss */
+/* line 62, ../scss/_navigation.scss */
 .breadcrumb ul li {
   display: inline;
 }
-/* line 67, ../scss/_navigation.scss */
+/* line 66, ../scss/_navigation.scss */
 .breadcrumb ul li ul li:before {
   content: ' / ';
   color: #ccc;
 }
-/* line 72, ../scss/_navigation.scss */
+/* line 71, ../scss/_navigation.scss */
 .breadcrumb ul li ul li:last-child a {
   text-decoration: none;
   color: #ccc;
@@ -1190,6 +1189,7 @@ nav * {
 
 /* line 8, ../scss/styles.scss */
 html {
+  background: #222;
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
   -webkit-text-rendering: optimizeLegibility;
@@ -1204,7 +1204,7 @@ html {
   font-smoothing: antialiased;
 }
 
-/* line 25, ../scss/styles.scss */
+/* line 27, ../scss/styles.scss */
 .band {
   margin: 0px;
   height: 180px;
@@ -1212,49 +1212,50 @@ html {
   background-size: cover;
 }
 
-/* line 32, ../scss/styles.scss */
+/* line 34, ../scss/styles.scss */
 .footer,
 .header {
-  background: #222;
   color: #fff;
 }
-/* line 36, ../scss/styles.scss */
+/* line 37, ../scss/styles.scss */
 .footer a,
 .header a {
   color: #fff;
 }
 
-/* line 42, ../scss/styles.scss */
+/* line 43, ../scss/styles.scss */
 .header * {
   line-height: 60px;
 }
-/* line 45, ../scss/styles.scss */
+/* line 46, ../scss/styles.scss */
 .header h1 {
   margin: 0px;
   font-size: 1.4em;
   font-weight: bold;
 }
-/* line 49, ../scss/styles.scss */
+/* line 50, ../scss/styles.scss */
 .header h1 a {
   text-decoration: none;
 }
 
-/* line 55, ../scss/styles.scss */
+/* line 56, ../scss/styles.scss */
 .footer {
   padding-top: 20px;
 }
 
-/* line 60, ../scss/styles.scss */
+/* line 61, ../scss/styles.scss */
 a:hover {
   text-decoration: none;
 }
 
-/* line 65, ../scss/styles.scss */
+/* line 66, ../scss/styles.scss */
 [role=main] {
-  margin-top: 40px;
+  padding-top: 40px;
+  min-height: 440px;
+  background: #fff;
 }
 
-/* line 69, ../scss/styles.scss */
+/* line 72, ../scss/styles.scss */
 .gist {
   margin-bottom: 40px;
 }
