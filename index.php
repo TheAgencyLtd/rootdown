@@ -2,25 +2,21 @@
 require 'vendor/autoload.php';
 
 use \Slim\Slim;
-use \Rootdown\Rootdown;
+use \Rootdown\Site as Site;
 
 /////////////////
 
-$rd   = new Rootdown;
 $app  = new Slim;
 
-$app->get('/', function () use ($rd) {
-  $rd->render('/index.md', 'full.php');
-});
-
-// $app->get('/app', function() use ($rd){
-//   $rd->render('/app.md', 'app.php', array(
-//     "data" => "data"
-//   ));
-// });
-
-$app->get('/:pages+', function($pages) use ($rd){
-  $rd->render();
+$app->get(':path+', function($path) use ($app){
+  $page = Site::page($path);
+  if($page){
+    $app->render($page->template(), array(
+      "page" => $page
+    ));
+  } else {
+    $app->render('404.php', array(), 404);
+  }
 });
 
 $app->run();

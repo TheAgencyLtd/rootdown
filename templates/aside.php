@@ -11,7 +11,7 @@
         <nav class="breadcrumb">
           <ul>
             <li><a href="/">Home</a>
-              <?php $page->breadcrumb(); ?>
+              <?php \Rootdown\Site::breadcrumb(); ?>
             </li>
           </ul>
         </nav>
@@ -19,7 +19,7 @@
       </article>
       <aside class="four columns">
         <nav class="channel">
-          <?php $page->channel(); ?>
+          <?php \Rootdown\Site::channel(); ?>
         </nav>
       </aside>
     </section>
