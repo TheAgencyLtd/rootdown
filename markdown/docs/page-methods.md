@@ -5,4 +5,4 @@ template: "aside.php"
 order: 6
 ---
 
-## Pages & Taxonomy
+## Page Object

@@ -1,5 +1,15 @@
 <?php
 
+//======================================================================
+// R O O T D O W N
+//======================================================================
+
+/* Developed by Nick Clarkson ( @t_pk )
+ * http://rootdown.io
+ * http://netotaku.github.io
+ * http://TheAgencyOnline.co.uk
+ */
+
 namespace Rootdown;
 
 use \Slim\Slim;
@@ -23,6 +33,11 @@ class Page{
 
   }
 
+  public function attribute($attrbute, $alt = false){
+    $data = $this->YAMLData()->getYAML();
+    return isset($data[$attrbute]) ? $data[$attrbute] : $alt;
+  }
+
   private function YAMLData(){
     $parser = new \Mni\FrontYAML\Parser();
     return $parser->parse($this->YAML, false);
@@ -31,19 +46,19 @@ class Page{
   public function path(){
 
     $start = strlen(Site::getMarkdownPath())-1;
-    $pos   = strrpos($this->path, '/index.md');
-    $str   = substr($this->path, $start, ($pos ? $pos-$start : -3));
+    $pos = strrpos($this->path, '/index.md');
+    $str = substr($this->path, $start, ($pos ? $pos-$start : -3));
 
     return $str == '' ? '/' : $str;
 
   }
 
   public function title(){
-    return $this->YAMLData()->getYAML()['title'];
+    return $this->attribute('title', 'Title missing');
   }
 
   public function template(){
-    return $this->YAMLData()->getYAML()['template'];
+    return $this->attribute('template', 'default.php');
   }
 
   public function content(){
@@ -51,12 +66,16 @@ class Page{
   }
 
   public function description(){
-    return $this->YAMLData()->getYAML()['description'];
+    return $this->attribute('description', 'Description missing');
   }
 
-  // public function attribute($attrbute){
-  //   return $this->doc['frontmatter'][$attrbute];
-  // }
+  public function order(){
+    return $this->attribute('order', 0);
+  }
+
+  public function hidden(){
+    return $this->attribute('hidden', false);
+  }
 
   public function children(){
     return $this->children;
@@ -81,15 +100,6 @@ class Site{
     }
   }
 
-
-  private static function getMarkdownFile($file){
-    return rtrim(self::$markdownPath, '/').$file;
-  }
-
-  private static function setMarkdownPath($path){
-    self::$markdownPath = $_SERVER['DOCUMENT_ROOT'].$path;
-  }
-
   public static function find($pages, $url){
     foreach($pages as $page){
       if($page->path() == $url){
@@ -101,8 +111,34 @@ class Site{
     }
   }
 
+  private static function getMarkdownFile($file){
+    return rtrim(self::$markdownPath, '/').$file;
+  }
+
+  private static function setMarkdownPath($path){
+    self::$markdownPath = $_SERVER['DOCUMENT_ROOT'].$path;
+  }
+
   public static function getMarkdownPath(){
     return self::$markdownPath;
+  }
+
+  private static function mint($file) {
+    $instance = new Page(self::getMarkdownFile($file));
+    return $instance;
+  }
+
+  public static function page($path){
+    $path = is_array($path) ? implode('/', $path) : $path;
+    return self::find(array(self::map()), $path);
+  }
+
+  private static function URL(){
+    return rtrim($_SERVER['REQUEST_URI'],'/');
+  }
+
+  private static function parts($path){
+    return explode('/', ltrim($path, '/'));
   }
 
   public static function map($markdownPath = '/markdown/'){
@@ -127,50 +163,41 @@ class Site{
     }
   }
 
-  private static function mint($file) {
-    $instance = new Page(self::getMarkdownFile($file));
-    return $instance;
-  }
+  //-----------------------------------------------------
+  // Navigation
+  //-----------------------------------------------------
 
-  public static function page($path){
-    $path = is_array($path) ? implode('/', $path) : $path;
-    return self::find(array(self::map()), $path);
-  }
-
-
-  private static function URL(){
-    return rtrim($_SERVER['REQUEST_URI'],'/');
-  }
-
-  private static function parts($path){
-    return explode('/', ltrim($path, '/'));
-  }
-
-  private static function navigation($pages, $recursive = true){ ?>
+  public static function navigation($pages, $recursive = true){ ?>
     <ul>
       <?php foreach($pages as $page) :
+        if(!$page->hidden()) :
 
-        $class = '';
-        $classes = array();
+          $class = '';
+          $classes = array();
 
-        if(strpos(self::URL(), $page->path()) !== false){
-          $classes[] = "in-path";
-        }
+          if(strpos(self::URL(), $page->path()) !== false) $classes[] = "in-path";
+          if($page->path() == self::URL()) $classes[] = "selected";
+          if(count($classes) > 0) $class = ' class="'.implode(' ', $classes).'"';
 
-        if($page->path()==self::URL()){
-          $classes[] = "selected";
-        }
+          ?>
+          <li>
+            <a href="<?=$page->path()?>"<?=$class?>><?=$page->title()?></a>
+            <?php
+              if($recursive){
+                if(!empty($page->children)){
 
-        if(count($classes) > 0){
-          $class = ' class="'.implode(' ', $classes).'"';
-        }
+                  usort($page->children, function($a,$b){
+                    return $a->order() > $b->order() ? 1 : -1;
+                  });
 
-        ?>
-        <li>
-          <a href="<?=$page->path()?>"<?=$class?>><?=$page->title()?></a>
-          <?php if($recursive) if(!empty($page->children)) self::navigation($page->children); ?>
-        </li>
-      <?php endforeach; ?>
+                  self::navigation($page->children);
+                }
+              }
+            ?>
+          </li>
+        <?php
+          endif;
+        endforeach; ?>
     </ul>
   <?php }
 

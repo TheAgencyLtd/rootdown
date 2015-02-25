@@ -2,7 +2,6 @@
 title: "Rootdown"
 description: "Simple, lightweight content management for developers"
 template: "full.php"
-bodyClass: "home"
 ---
 
 # Simple, lightweight content management for developers

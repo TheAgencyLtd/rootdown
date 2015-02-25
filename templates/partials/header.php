@@ -2,7 +2,7 @@
 <section class="header">
   <div class="container">
     <header class="twelve columns">
-      <h1><a href="/">ROOTDOWN</a></h1>
+      <h1><a href="/">Root Down</a></h1>
       <nav class="mainmenu">
         <?php \Rootdown\Site::mainmenu(); ?>
       </nav>
